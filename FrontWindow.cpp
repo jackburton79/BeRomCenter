@@ -9,6 +9,8 @@
 #include <MenuField.h>
 #include <MenuItem.h>
 #include <OutlineListView.h>
+#include <PopUpMenu.h>
+
 #include <StatusBar.h>
 #include <ScrollView.h>
 #include <TextView.h>
@@ -25,7 +27,7 @@
 #include "RomCenterApp.h"
 #include "Settings.h"
 
-#include "unzip/unzip.h"
+//#include <unzip.h>
 
 const char *kWindowCaption = "BeRomCenter";
 const int32 kLVSelectionChanged = 'LVsc';
@@ -48,7 +50,7 @@ FrontWindow::FrontWindow()
 					
 	AddListView();
 	
-	fPopUpMenu = new TDatPopUpMenu("DataFiles");
+	fPopUpMenu = new BPopUpMenu("DataFiles");
 	
 	BRect fieldRect(300, 50, 600, 90);
 	fDataFilesMenuField = new BMenuField(fieldRect, "datafiles",
@@ -79,7 +81,7 @@ FrontWindow::FrontWindow()
 	path.Append("datafiles");	
 	
 	fPopUpMenu->SetTargetForItems(this);
-	fPopUpMenu->Rebuild(path.Path());
+	//fPopUpMenu->Rebuild(path.Path());
 }
 
 
@@ -92,7 +94,7 @@ FrontWindow::MessageReceived(BMessage *message)
 			(new BAlert("Info", "BeRomCenter\n\nby Jack Burton", "Ok"))->Go(NULL);
 			break;
 		}
-		case kFPopUpSelChanged:
+		/*case kFPopUpSelChanged:
 		{
 			BMenuItem *item = NULL;
 			if (message->FindPointer("source", (void**)&item) == B_OK) {
@@ -118,7 +120,7 @@ FrontWindow::MessageReceived(BMessage *message)
 				}
 			}
 			break;
-		}
+		}*/
 		case kLVSelectionChanged:
 		{
 			fRomInfo->SelectAll();

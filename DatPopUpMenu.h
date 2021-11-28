@@ -1,16 +1,16 @@
 #ifndef __DATPOPUPMENU_H
 #define __DATPOPUPMENU_H
 
-#include "FilePopUpMenu.h"
+//#include "FilePopUpMenu.h"
 
 #include <String.h>
 
-class TDatPopUpMenu : public TFilePopUpMenu
+class TDatPopUpMenu //: public TFilePopUpMenu
 {
 public:
 	TDatPopUpMenu(const char *name, bool radioMode = true,
 					bool labelFromMarked = true, menu_layout layout = B_ITEMS_IN_COLUMN)
-		: TFilePopUpMenu(name, radioMode, labelFromMarked, layout)
+		//: TFilePopUpMenu(name, radioMode, labelFromMarked, layout)
 	{
 		
 	};

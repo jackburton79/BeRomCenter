@@ -9,9 +9,9 @@ class BButton;
 class BMenuBar;
 class BMenuField;
 class BOutlineListView;
+class BPopUpMenu;
 class BStatusBar;
 class BTextView;
-class TFilePopUpMenu;
 
 class FrontWindow : public BWindow
 {
@@ -26,7 +26,7 @@ private:
 	
 	BOutlineListView *fListView;
 	BButton *fCheckButton;
-	TFilePopUpMenu *fPopUpMenu;
+	BPopUpMenu *fPopUpMenu;
 	BMenuField *fDataFilesMenuField;
 	int32 fLastSelected;
 	
