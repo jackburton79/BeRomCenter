@@ -1,10 +1,9 @@
-#include <Roster.h>
-
-//#include <unistd.h>
-
 #include "RomCenterApp.h"
+
 #include "FrontWindow.h"
-//#include "SplashWindow.h"
+
+#include <Alert.h>
+#include <Roster.h>
 
 const char *kAppSignature = "application/x-vnd.BeRomCenter";
 
@@ -43,6 +42,13 @@ RomCenterApp::ReadyToRun()
 {
 	fMainWindow->Show();
 	BApplication::ReadyToRun();
+}
+
+
+void
+RomCenterApp::AboutRequested()
+{
+	(new BAlert("Info", "BeRomCenter\n\nby Jack Burton", "Ok"))->Go(NULL);
 }
 
 

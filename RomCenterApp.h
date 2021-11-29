@@ -10,6 +10,7 @@ class RomCenterApp : public BApplication
 public:
 	RomCenterApp();
 	virtual void ReadyToRun();
+	virtual void AboutRequested();
 	BPath Path() const;
 private:
 	BWindow *fMainWindow;

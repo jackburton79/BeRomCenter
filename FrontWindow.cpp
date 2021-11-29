@@ -89,11 +89,6 @@ void
 FrontWindow::MessageReceived(BMessage *message)
 {
 	switch (message->what) {
-		case B_ABOUT_REQUESTED: 
-		{
-			(new BAlert("Info", "BeRomCenter\n\nby Jack Burton", "Ok"))->Go(NULL);
-			break;
-		}
 		/*case kFPopUpSelChanged:
 		{
 			BMenuItem *item = NULL;
@@ -191,6 +186,7 @@ FrontWindow::AddMenu()
 	
 	menu = new BMenu("Help");
 	menu->AddItem(new BMenuItem("About", new BMessage(B_ABOUT_REQUESTED)));
+	menu->SetTargetForItems(be_app);
 	fMenuBar->AddItem(menu);
 	
 	AddChild(fMenuBar); // Add the full menuBar
